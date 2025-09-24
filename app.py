@@ -7,6 +7,32 @@ st.set_page_config(page_title="Tugas 1 - Tabel", page_icon="📊", layout="wide"
 st.title("📊 Tugas 1 — Keamanan Data")
 
 LOGO_PATH = Path(__file__).parent / "assets" / "uajy_logo.png"
+col_logo, col_title = st.columns([1, 5], vertical_alignment="center")
+with col_logo:
+    if LOGO_PATH.exists():
+        st.image(str(LOGO_PATH), caption=None, use_column_width=True)
+    else:
+        st.markdown(
+            """
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;border:1px dashed #ccc;padding:8px;border-radius:8px;">
+                <span style="font-size:13px;">Hehe -_-</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+with col_title:
+    st.markdown(
+        """
+        <div style="padding-left:8px;">
+            <h2 style="margin-bottom:0;">Universitas Atma Jaya Yogyakarta</h2>
+            <div style="opacity:0.75; margin-top:2px;">Informatika / Keamanan Data — Tugas 1</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+st.divider()
 
 lab1_rows = [
     [1, "Daftar nama karyawan dan gaji", "Confidential", "Data pribadi karyawan termasuk data sensitif; hanya terbatas HR & manajemen."],
