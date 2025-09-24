@@ -10,7 +10,7 @@ LOGO_PATH = Path(__file__).parent / "assets" / "uajy_logo.png"
 col_logo, col_title = st.columns([1, 5], vertical_alignment="center")
 with col_logo:
     if LOGO_PATH.exists():
-        st.image(str(LOGO_PATH), caption=None, use_column_width=True)
+        st.image(str(LOGO_PATH), caption=None, use_container_width=True)
     else:
         st.markdown(
             """
